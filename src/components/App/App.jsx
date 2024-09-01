@@ -4,7 +4,7 @@ import './App.css';
 import Understanding from '../Understanding/Understanding';
 import Header from '../Header/Header';
 import Support from '../Support/Support';
-
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
 
@@ -12,8 +12,15 @@ function App() {
     <div className='App'>
     
       <Header />
+
+      <Router>
       <Understanding />
+         <Route path='/support'>
       <Support />
+      </Route>
+      </Router>
+     
+      
     </div>
   );
 }
