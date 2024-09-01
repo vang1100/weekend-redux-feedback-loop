@@ -5,6 +5,7 @@ import Understanding from '../Understanding/Understanding';
 import Header from '../Header/Header';
 import Support from '../Support/Support';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+//import Form from '../Form/Form';
 
 function App() {
 
@@ -12,13 +13,16 @@ function App() {
     <div className='App'>
     
       <Header />
+      <Understanding />
+      <Support />
+     
 
-      <Router>
+      {/* <Router>
       <Understanding />
          <Route path='/support'>
       <Support />
       </Route>
-      </Router>
+      </Router> */}
      
       
     </div>

@@ -1,7 +1,11 @@
 function Support(){
     return (
         <>
-        Support jsx
+    How well are you being supported?
+         <label>
+          <input type='number'></input>
+          <button>Next</button>
+    </label>
         </>
     )
 }
