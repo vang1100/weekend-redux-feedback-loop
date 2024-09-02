@@ -13,6 +13,12 @@ function App() {
 
   const [feedback, setFeedback] = useState([]);
 
+  // varibles for form
+  const [feeling, setFeeling] = useState(0);
+  const [understanding, setUnderstanding] = useState(0);
+  const [support, setSupport] = useState(0);
+  const [comments, setComments] = ('');
+
 
   useEffect(() => {
     getFeedback();
@@ -33,21 +39,31 @@ function App() {
       })
   }
 
+  // AXIOS POST - add to Feedback Data
+
+  const addData = (event) => {
+    event.preventDefault();
+
+    //pack up data
+
+    const addToDB = {
+      feeling: feeling,
+      understanding: understanding,
+      support: support,
+      comments: comments
+    }
+  }
+
 
   return (
     <div className='App'>
     
       <Header />
-      <Understanding />
-      <Support />
-     
-
-      {/* <Router>
-      <Understanding />
-         <Route path='/support'>
-      <Support />
-      </Route>
-      </Router> */}
+    
+      <label htmlFor="feeling">
+          <input type='number'></input>
+          <button>Next</button>
+    </label>
      
       
     </div>
