@@ -48,10 +48,24 @@ function App() {
 
     const addToDB = {
       feeling: feeling,
-      understanding: understanding,
-      support: support,
-      comments: comments
+      // understanding: understanding,
+      // support: support,
+      // comments: comments
     }
+
+    // POST route
+
+    axios.post('/api/feedback', addToDB)
+      .then((response) => {
+        console.log(response);
+
+        //clear out inputs
+
+        setFeeling(0);
+      })
+      .catch((error) =>{
+        console.log(error);
+      })
   }
 
 
@@ -60,10 +74,11 @@ function App() {
     
       <Header />
     
-      <label htmlFor="feeling">
-          <input type='number'></input>
-          <button>Next</button>
-    </label>
+  <form onSubmit={addData}> 
+    <label htmlFor="feeling">How are you feeling today?</label>
+    <input id="feeling" onChange={(event) => setFeeling(event.target.value)} value={feeling}></input>
+    <button type="submit">Next</button>
+  </form>
      
       
     </div>
