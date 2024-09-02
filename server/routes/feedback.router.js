@@ -10,6 +10,9 @@ router.post('/', (req, res) => {
     const support = req.body.support;
     const comments = req.body.comments;
 
+    console.log('feeling', feeling);
+    //const comments = req.body.comments;
+
     const sqlQuery =  `
                 INSERT INTO feedback ("feeling", "understanding", "support", "comments")
                 VALUES 
