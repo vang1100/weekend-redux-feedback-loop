@@ -3,9 +3,9 @@ import axios from 'axios';
 
 function FeedbackForm({getFeedback}) {
 
-    const [feeling, setFeeling] = useState();
-    const [understanding, setUnderstanding] = useState();
-    const [support, setSupport] = useState();
+    const [feeling, setFeeling] = useState('');
+    const [understanding, setUnderstanding] = useState('');
+    const [support, setSupport] = useState('');
     const [comments, setComments] = useState('');
     
     // / AXIOS POST - add to Feedback Data
@@ -43,10 +43,7 @@ function FeedbackForm({getFeedback}) {
 
 return (
         <>
-        <label>
-          <input type='number'></input>
-          <button onClick={() => addData()}>Next</button>
-    </label> 
+        
     
    <form onSubmit={addData}> 
     <label htmlFor="feeling">How are you feeling today?</label>

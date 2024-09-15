@@ -108,8 +108,10 @@ function App() {
         <li key={feedback.id}>{feedback.feeling}</li>
       )}
     </ul> */}
-    <FeedbackList />
+    <h2>Form</h2>
     <FeedbackForm getFeedback={getFeedback} />
+    <FeedbackList />
+   
     
     </div>
   );
