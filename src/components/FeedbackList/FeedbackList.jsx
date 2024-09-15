@@ -12,7 +12,11 @@ function FeedbackList(){
         <ul>
       {
       feedbacklist.map((feedback) =>
-        <li key={feedback.id}>{feedback.feeling}{feedback.understanding}{feedback.support}{feedback.comments}</li>
+        <li key={feedback.id}>
+            {feedback.feeling}
+            {feedback.understanding}
+            {feedback.support}
+            {feedback.comments}</li>
       )}
     </ul>
         </>

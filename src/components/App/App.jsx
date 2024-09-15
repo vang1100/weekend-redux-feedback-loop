@@ -1,12 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Understanding from '../Understanding/Understanding';
 import Header from '../Header/Header';
-import Support from '../Support/Support';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useState, useEffect} from 'react';
 import FeedbackList from '../FeedbackList/FeedbackList';
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import { useDispatch } from 'react-redux';
 
 //import Form from '../Form/Form';
@@ -110,6 +109,8 @@ function App() {
       )}
     </ul> */}
     <FeedbackList />
+    <FeedbackForm getFeedback={getFeedback} />
+    
     </div>
   );
 }
