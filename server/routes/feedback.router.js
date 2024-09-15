@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
     //const comments = req.body.comments;
 
     const sqlQuery =  `
-                INSERT INTO feedback ("feeling", "understanding", "support", "comments")
+                INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                 VALUES 
                 ($1, $2, $3, $4);
                     `;

@@ -14,10 +14,10 @@ function App() {
   const [feedback, setFeedback] = useState([]);
 
   // varibles for form
-  const [feeling, setFeeling] = useState();
-  const [understanding, setUnderstanding] = useState();
-  const [support, setSupport] = useState();
-  const [comments, setComments] = ("");
+  const [feeling, setFeeling] = useState(0);
+  const [understanding, setUnderstanding] = useState(0);
+  const [support, setSupport] = useState(0);
+  const [comments, setComments] = useState('');
 
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
       understanding: understanding,
       support: support,
       comments: comments
-    }
+    };
 
     // POST route
 
@@ -61,7 +61,7 @@ function App() {
 
         //clear out inputs
 
-        setFeeling();
+        getFeedback();
       })
       .catch((error) =>{
         console.log(error);
@@ -95,7 +95,8 @@ function App() {
     <button type="submit">Next</button>
   </form>
      
-      
+      <h1>get list</h1>
+      <p>{JSON.stringify(feedback)}</p>
     </div>
   );
 }
