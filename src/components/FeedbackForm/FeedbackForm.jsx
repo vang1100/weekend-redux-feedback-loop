@@ -6,6 +6,8 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Home from '../Home/Home';
+import FeedbackReview from '../FeedbackReview/FeedbackReview';
+
 
 function FeedbackForm({getFeedback}) {
 
@@ -70,7 +72,10 @@ return (
         <Route path='/comments'>
             <Comments addData={addData} setComments={setComments} comments={comments} />
         </Route>
-    
+
+        <Route path='/review'>
+            <FeedbackReview />
+        </Route>
     </Router>
     
     
