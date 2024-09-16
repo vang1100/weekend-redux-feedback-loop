@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import Home from '../Home/Home';
 
 function FeedbackForm({getFeedback}) {
 
@@ -29,10 +35,10 @@ function FeedbackForm({getFeedback}) {
         console.log(response);
 
         //clear out inputs
-        setFeeling();
-        setUnderstanding();
-        setSupport();
-        setComments();
+        setFeeling('');
+        setUnderstanding('');
+        setSupport('');
+        setComments('');
         
         getFeedback();
       })
@@ -43,23 +49,52 @@ function FeedbackForm({getFeedback}) {
 
 return (
         <>
-        
+    <Router>
     
-   <form onSubmit={addData}> 
-    <label htmlFor="feeling">How are you feeling today?</label>
-    <input type="number" id="feeling" onChange={(event) => setFeeling(event.target.value)} value={feeling}></input>
+        <Route path='/' exact>
+            <Home/>
+        </Route>
 
-    <label htmlFor="understanding">How well are you understanding the content?</label>
+        <Route path='/feeling'>
+            <Feeling addData={addData} setFeeling={setFeeling} feeling={feeling} />
+        </Route>
+
+        <Route path='/understanding'>
+            <Understanding addData={addData} setUnderstanding={setUnderstanding} understanding={understanding}/>
+        </Route>
+
+        <Route path='/support'>
+            <Support addData={addData} setSupport={setSupport} support={support} />
+        </Route>
+
+        <Route path='/comments'>
+            <Comments addData={addData} setComments={setComments} comments={comments} />
+        </Route>
+    
+    </Router>
+    
+    
+   
+    
+    
+    
+   {/* <form onSubmit={addData}>  */}
+    
+
+    {/* <label htmlFor="feeling">How are you feeling today?</label>
+    <input type="number" id="feeling" onChange={(event) => setFeeling(event.target.value)} value={feeling}></input> */}
+
+    {/* <label htmlFor="understanding">How well are you understanding the content?</label>
     <input type="number" id="understanding" onChange={(event) => setUnderstanding(event.target.value)} value={understanding}></input>
 
     <label htmlFor="support">How well are you being supported?</label>
     <input type="number" id="support" onChange={(event) => setSupport(event.target.value)} value={support}></input>
 
     <label htmlFor="comments">Any comments you want to leave?</label>
-    <input type="text" id="comments" onChange={(event) => setComments(event.target.value)} value={comments}></input>
+    <input type="text" id="comments" onChange={(event) => setComments(event.target.value)} value={comments}></input> */}
 
-    <button type="submit">Next</button>
-  </form>
+    {/* <button type="submit">Next</button> */}
+  {/* </form>  */}
      
         </>
     )

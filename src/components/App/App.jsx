@@ -8,6 +8,7 @@ import FeedbackList from '../FeedbackList/FeedbackList';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import { useDispatch } from 'react-redux';
 
+
 //import Form from '../Form/Form';
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
     <div className='App'>
     
       <Header />
+     
 
       {/* <label>
           <input type='number'></input>
@@ -108,9 +110,9 @@ function App() {
         <li key={feedback.id}>{feedback.feeling}</li>
       )}
     </ul> */}
-    <h2>Form</h2>
+  
     <FeedbackForm getFeedback={getFeedback} />
-    <FeedbackList />
+    {/* <FeedbackList /> */}
    
     
     </div>

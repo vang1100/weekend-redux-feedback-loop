@@ -1,11 +1,18 @@
-function Support(){
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+
+function Support({addData, setSupport, support}){
     return (
         <>
-    How well are you being supported?
-         <label>
-          <input type='number'></input>
-          <button>Next</button>
-    </label>
+    <h1>Support</h1>
+    <Link to ='/' >Main Page</Link>
+    
+    <form onSubmit={addData}> 
+    <label htmlFor="support">How well are you being supported?</label>
+    <input type="number" id="support" onChange={(event) => setSupport(event.target.value)} value={support}></input>
+            
+    <Link to ='/comments' ><button>Next</button></Link>
+            
+        </form>
         </>
     )
 }
