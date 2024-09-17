@@ -4,7 +4,7 @@ function Support({addData, setSupport, support}){
     return (
         <>
     <h1>Support</h1>
-    <Link to ='/' >Main Page</Link>
+    
     
     <form onSubmit={addData}> 
     <label htmlFor="support">How well are you being supported?</label>

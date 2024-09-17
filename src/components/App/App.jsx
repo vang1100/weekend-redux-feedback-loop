@@ -4,7 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useState, useEffect} from 'react';
-import FeedbackList from '../FeedbackList/FeedbackList';
+//import FeedbackList from '../FeedbackList/FeedbackList';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import { useDispatch } from 'react-redux';
 

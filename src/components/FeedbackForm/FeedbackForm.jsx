@@ -7,6 +7,7 @@ import Comments from '../Comments/Comments';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Home from '../Home/Home';
 import FeedbackReview from '../FeedbackReview/FeedbackReview';
+import ThankYou from '../ThankYou/ThankYou';
 
 
 function FeedbackForm({getFeedback}) {
@@ -75,6 +76,10 @@ return (
 
         <Route path='/review'>
             <FeedbackReview />
+        </Route>
+
+        <Route path ='/thankyou'>
+            <ThankYou/>
         </Route>
     </Router>
     

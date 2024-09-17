@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 function FeedbackReview() {
 
@@ -8,7 +9,7 @@ function FeedbackReview() {
 
     return (
         <>
-        <h2>Feedback List</h2>
+        <h2>Submission Review</h2>
         <ul>
       {
       feedbacklist.map((feedback) =>
@@ -20,7 +21,8 @@ function FeedbackReview() {
             Comments: {feedback.comments}</p>
       )}
     </ul>
-
+    
+    <Link to='/thankyou'><button>EXIT</button></Link>
         </>
     )
 }
